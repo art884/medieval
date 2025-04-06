@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt von Arthur (10c)</title>
+</head>
+<body class="quicksand">
+    <header class="header">
+        <button id="open-sidebar-button" onclick="openSidebar()">☰</button>
+        Von Arthur Tidemann (10c)
+        <nav id="navbar">
+            <ul>
+                <li class="li">
+                    <button id="close-sidebar-button" onclick="closeSidebar()">✖</button>
+                </li>
+                <li class="home-li li"><a href="index.html">🏠Home</a></li>
+                <li class="li"><a href="about.html">👤About</a></li>
+                <li class="li"><a href="quiz.html">🤔Quiz</a></li>
+                <li class="li"><a href="judenhut.html">🎩Judenhut</a></li>
+                <li class="li"><a href="rouelle.html">💍Gelber Ring</a></li>
+                <li class="li"><a href="marginalisierung.html">👃Marginalisierung</a></li>
+                <li class="li"><a href="materielle_bereicherung.html">💰Materielle Bereicherung</a></li>
+                <li class="li"><a href="judensau.html">🐷Judensau</a></li>
+                <li class="li"><a href="synagoga.html">⚖️Synagoga und Ecclesia</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="center-flex container">
+            <h1>Quiz</h1>
+        </div>
+        <div class="quiz-container center-flex">
+             <h2 id="question">Frage lädt...</h2>
+             <img id="question-image" class="bilderrahmen" />
+             <ul id="answers"></ul>
+             <p id="feedback"></p>
+             <button id="next-btn" onclick="nextQuestion()" style="display:none;">Nächste Frage</button>
+             <p id="result" style="font-weight: bold; margin-top: 20px;"></p>
+        </div>
+
+        <script src="script.js"></script>
+    </main>
+    <footer>
+    </footer>
+</body>
+<style>
+    @font-face {
+        font-family: 'font';
+        src: url('https://fonts.google.com/share?selection.family=Lexend:wght@100..900') format('woff2'), url('path/to/MeineSchriftart.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @media(max-width: 520px) {
+        body {
+            margin: 0;
+            padding: 15;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center; /* Fixiert die Ausrichtung oben */
+            font-family: 'font';
+            color: mintcream;
+            font-size: 12px;
+            margin: 10px;
+            height: auto;
+            flex-direction: column;
+            padding-top: 110px; /* Gibt Platz für den Header */
+            background-image: url("https://images.pexels.com/photos/4629695/pexels-photo-4629695.jpeg"); /* Pfad zum Bild */
+            background-color: rgba(0,0,0,45);
+            background-size: cover; /* Deckt den gesamten Bereich ab */
+            background-repeat: no-repeat; /* Kein Wiederholen */
+            background-position: center top; /* Oben zentriert */
+            background-attachment: scroll;
+            min-height: 100vh; /* Falls der Body leer ist */
+        }
+
+        main {
+            font-size: 3px;
+            flex: 1;
+            margin: 40px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            /* Glassmorphism-Stil */
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: white;
+        }
+
+        #question-image {
+            display: block;
+            margin: 10px auto; /* Zentriert horizontal */
+            max-width: 80%;
+        }
+
+
+        .white {
+            color: white;
+        }
+
+            .white:hover {
+                color: dodgerblue;
+                transform: scale(1.05);
+            }
+
+        h1 {
+            display: block;
+            font-size: 4px;
+        }
+
+        h2 {
+            background: linear-gradient(to right, dodgerblue, cyan);
+            background-clip: text;
+            filter: brightness(1.3);
+            color: transparent;
+            font-size: 10px;
+        }
+
+        .quiz-container {
+            background: transparent;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: rgba(4, 4, 30, 100);
+            margin: 10px 0;
+            padding: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 10px;
+        }
+
+            li:hover {
+                background: rgba(30, 30, 100, 100);
+            }
+
+        .li{
+            background: transparent;
+        }
+
+        #feedback {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 10px;
+        }
+
+        #next-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background: #4caf50;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+            #next-btn:hover {
+                background: #45a049;
+            }
+
+        .bilderrahmen {
+            width: 100%;
+            padding: 10px;
+            border: 5px solid #333; /* Rahmen */
+            border-radius: 10px; /* Abgerundete Ecken */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center; /* Bild mittig im Rahmen */
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .bilderrahmen img {
+                width: 100%; /* Passt sich der Rahmenbreite an (also 60% der Originalgröße) */
+                height: auto;
+                border-radius: 8px;
+            }
+
+            /* Interaktion */
+            .bilderrahmen:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+                cursor: pointer;
+            }
+
+
+
+
+        .quicksand {
+            font-family: "Quicksand", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .small {
+            font-size: 6px;
+        }
+
+        .margin-right {
+            margin-right: auto;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund */
+            z-index: 9; /* Muss unter der Sidebar liegen */
+            display: none; /* Standardmäßig unsichtbar */
+        }
+
+        /* Zeige das Overlay, wenn die Sidebar offen ist */
+        nav.show + #overlay {
+            display: block;
+        }
+
+
+        #open-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            width: min(15em, 100%);
+            background-color: rgba(4, 4, 30, 100);
+            transition: right 0.3s ease-in-out;
+            z-index: 200;
+        }
+
+            nav.show {
+                right: 0;
+                background-color: rgba(20, 20, 55, 100);
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            nav li {
+                padding: 15px;
+            }
+
+            nav a {
+                display: flex;
+                padding: 5px;
+                border-radius: 15px;
+                text-decoration: none;
+                color: rgba(150, 150, 255, 100);
+            }
+
+                nav a:hover {
+                    color: white;
+                    background-color: rgba(150, 150, 255, 100);
+                }
+
+        #close-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+
+        .center-flex {
+            display: block;
+            text-align: center;
+        }
+
+        .picture img {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+            .picture img:hover {
+                filter: brightness(2);
+            }
+
+        .container {
+            display: block;
+            width: auto;
+            text-align: center;
+            padding: 15px;
+            margin: 10px;
+            height: auto;
+            color: mintcream;
+            background-image: url("https://images.pexels.com/photos/4629695/pexels-photo-4629695.jpeg"); /* Pfad zum Bild */
+            background-size: cover; /* Deckt den gesamten Bereich ab */
+            background-repeat: no-repeat; /* Kein Wiederholen */
+            border-radius: 15px;
+            font-size: 15px;
+            overflow: hidden;
+        }
+
+        .text {
+            flex-shrink: 1;
+        }
+
+        open-sidebar-button {
+            display: none;
+            background: none;
+            border: none;
+            padding: 1em;
+            margin-left: auto;
+            cursor: pointer;
+        }
+
+        close-sidebar-button {
+            display: none;
+            background: none;
+            border: none;
+            padding: 1em;
+            cursor: pointer;
+        }
+
+        header {
+            position: fixed; /* Fixiert den Header oben */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgba(4, 4, 30, 100);
+            font-size: 8px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .correct {
+            background-color: #c8e6c9; /* Grün */
+            border: 2px solid #4caf50;
+        }
+
+        .wrong {
+            background-color: #ffcdd2; /* Rot */
+            border: 2px solid #f44336;
+        }
+
+    }
+
+    @media(max-width: 770px) {
+        body {
+            margin: 0;
+            padding: 10;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center; /* Fixiert die Ausrichtung oben */
+            font-family: 'font';
+            color: mintcream;
+            font-size: 12px;
+            margin: 10px;
+            height: auto;
+            flex-direction: column;
+            padding-top: 110px; /* Gibt Platz für den Header */
+            background-image: url("https://images.pexels.com/photos/4629695/pexels-photo-4629695.jpeg"); /* Pfad zum Bild */
+            backgrond-color: rgba(0,0,0,45);
+            background-size: cover; /* Deckt den gesamten Bereich ab */
+            background-repeat: no-repeat; /* Kein Wiederholen */
+            background-position: center top; /* Oben zentriert */
+            background-attachment: scroll;
+            min-height: 100vh; /* Falls der Body leer ist */
+        }
+
+        main {
+            font-size: 10px;
+            flex: 1;
+            margin: 40px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            /* Glassmorphism-Stil */
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: white;
+        }
+
+        #question-image {
+            display: block;
+            margin: 10px auto; /* Zentriert horizontal */
+            max-width: 80%;
+        }
+
+
+        .bilderrahmen {
+            width: 60%; /* Nur noch 60% der ursprünglichen Breite */
+            padding: 10px;
+            border: 5px solid #333; /* Rahmen */
+            border-radius: 10px; /* Abgerundete Ecken */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center; /* Bild mittig im Rahmen */
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .bilderrahmen img {
+                width: 100%; /* Passt sich der Rahmenbreite an (also 60% der Originalgröße) */
+                height: auto;
+                border-radius: 8px;
+            }
+
+            /* Interaktion */
+            .bilderrahmen:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+                cursor: pointer;
+            }
+
+
+        .white {
+            color: white;
+        }
+
+            .white:hover {
+                color: dodgerblue;
+                transform: scale(1.05);
+            }
+
+
+        h1 {
+            font-size: 12px;
+        }
+
+        h2 {
+            background: linear-gradient(to right, dodgerblue, cyan);
+            filter: brightness(1.3);
+            background-clip: text;
+            color: transparent;
+            font-size: 30px;
+        }
+
+        .quiz-container {
+            background: transparent;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: rgba(4, 4, 30, 100);
+            margin: 10px 0;
+            padding: 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 20px;
+        }
+
+            li:hover {
+                background: rgba(30, 30, 100, 100);
+            }
+
+        .li {
+            background: transparent;
+        }
+
+        #feedback {
+            margin-top: 60px;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        #next-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background: #4caf50;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+            #next-btn:hover {
+                background: #45a049;
+            }
+
+
+        .quicksand {
+            font-family: "Quicksand", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .small {
+            font-size: 7px;
+        }
+
+        .margin-right {
+            margin-right: auto;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund */
+            z-index: 9; /* Muss unter der Sidebar liegen */
+            display: none; /* Standardmäßig unsichtbar */
+        }
+
+        /* Zeige das Overlay, wenn die Sidebar offen ist */
+        nav.show + #overlay {
+            display: block;
+        }
+
+        #open-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            width: min(15em, 100%);
+            background-color: rgba(4, 4, 30, 100);
+            transition: right 0.3s ease-in-out;
+            z-index: 200;
+        }
+
+            nav.show {
+                right: 0;
+                background-color: rgba(20, 20, 55, 100);
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            nav li {
+                padding: 15px;
+            }
+
+            nav a {
+                display: flex;
+                padding: 5px;
+                border-radius: 15px;
+                text-decoration: none;
+                color: rgba(150, 150, 255, 100);
+            }
+
+                nav a:hover {
+                    color: white;
+                    background-color: rgba(150, 150, 255, 100);
+                }
+
+        #close-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+
+
+        .center-flex {
+            display: block;
+            text-align: center;
+        }
+
+        .picture img {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+            .picture img:hover {
+                filter: brightness(2);
+            }
+
+        .container {
+            display: block;
+            width: auto;
+            text-align: center;
+            padding: 30px;
+            margin: 10px;
+            height: auto;
+            color: mintcream;
+            background-image: url("https://images.pexels.com/photos/4629695/pexels-photo-4629695.jpeg"); /* Pfad zum Bild */
+            background-size: cover; /* Deckt den gesamten Bereich ab */
+            background-repeat: no-repeat; /* Kein Wiederholen */
+            border-radius: 15px;
+            font-size: 15px;
+            overflow: hidden;
+        }
+
+        .text {
+            flex-shrink: 1;
+        }
+
+        header {
+            position: fixed; /* Fixiert den Header oben */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgba(4, 4, 30, 100);
+            font-size: 15px;
+            display: flex;
+            z-index: 100;
+        }
+
+        .correct {
+            background-color: #c8e6c9; /* Grün */
+            border: 2px solid #4caf50;
+        }
+
+        .wrong {
+            background-color: #ffcdd2; /* Rot */
+            border: 2px solid #f44336;
+        }
+
+    }
+
+    @media(min-width: 771px) {
+        body {
+            margin: 0;
+            padding: 10;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center; /* Fixiert die Ausrichtung oben */
+            font-family: 'font';
+            color: mintcream;
+            font-size: 30px;
+            margin: 10px;
+            height: auto;
+            flex-direction: column;
+            padding-top: 110px; /* Gibt Platz für den Header */
+            background-image: url("https://images.pexels.com/photos/4629695/pexels-photo-4629695.jpeg"); /* Pfad zum Bild */
+            background-color: rgba(0,0,0,45);
+            background-size: cover; /* Deckt den gesamten Bereich ab */
+            background-repeat: no-repeat; /* Kein Wiederholen */
+            background-position: center top; /* Oben zentriert */
+            background-attachment: scroll;
+            min-height: 100vh; /* Falls der Body leer ist */
+        }
+
+        main {
+            flex: 1;
+            font-size: 15px;
+            margin: 80px;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            /* Glassmorphism-Stil */
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: white;
+        }
+
+        #question-image {
+            display: block;
+            margin: 10px auto; /* Zentriert horizontal */
+            max-width: 80%;
+        }
+
+
+        .white {
+            color: white;
+        }
+
+            .white:hover {
+                color: dodgerblue;
+                transform: scale(1.05);
+            }
+
+        .bilderrahmen {
+            width: 60%; /* Nur noch 60% der ursprünglichen Breite */
+            padding: 10px;
+            border: 5px solid #333; /* Rahmen */
+            border-radius: 10px; /* Abgerundete Ecken */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center; /* Bild mittig im Rahmen */
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .bilderrahmen img {
+                width: 100%; /* Passt sich der Rahmenbreite an (also 60% der Originalgröße) */
+                height: auto;
+                border-radius: 8px;
+            }
+
+            /* Interaktion */
+            .bilderrahmen:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+                cursor: pointer;
+            }
+
+
+
+        h2 {
+            background: linear-gradient(to right, dodgerblue, cyan);
+            filter: brightness(1.3);
+            background-clip: text;
+            color: transparent;
+            font-size: 45px;
+        }
+
+        .quiz-container {
+            background: transparent;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: rgba(4, 4, 30, 100);
+            margin: 10px 0;
+            padding: 45px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 30px;
+        }
+
+            li:hover {
+                background: rgba(30, 30, 100, 100);
+            }
+
+        .li {
+            background: transparent;
+        }
+
+        #feedback {
+            margin-top: 90px;
+            font-weight: bold;
+            font-size: 45px;
+        }
+
+        #next-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background: #4caf50;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+            #next-btn:hover {
+                background: #45a049;
+            }
+
+        .quicksand {
+            font-family: "Quicksand", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .small {
+            font-size: 10px;
+        }
+
+        .margin-right {
+            margin-right: auto;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund */
+            z-index: 9; /* Muss unter der Sidebar liegen */
+            display: none; /* Standardmäßig unsichtbar */
+        }
+
+        /* Zeige das Overlay, wenn die Sidebar offen ist */
+        nav.show + #overlay {
+            display: block;
+        }
+
+        #open-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            width: min(15em, 100%);
+            background-color: rgba(4, 4, 30, 100);
+            transition: right 0.3s ease-in-out;
+            z-index: 200;
+        }
+
+            nav.show {
+                right: 0;
+                background-color: rgba(20, 20, 55, 100);
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            nav li {
+                padding: 15px;
+            }
+
+            nav a {
+                display: flex;
+                padding: 5px;
+                border-radius: 15px;
+                text-decoration: none;
+                color: rgba(150, 150, 255, 100);
+            }
+
+                nav a:hover {
+                    color: white;
+                    background-color: rgba(150, 150, 255, 100);
+                }
+
+        #close-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+
+        .center-flex {
+            display: block;
+            text-align: center;
+        }
+
+        .picture img {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+            .picture img:hover {
+                filter: brightness(1.5);
+            }
+
+        .container {
+            display: block;
+            width: auto;
+            text-align: center;
+            padding: 50px;
+            margin: 10px;
+            height: auto;
+            color: mintcream;
+            background-image: url("https://images.pexels.com/photos/4629695/pexels-photo-4629695.jpeg"); /* Pfad zum Bild */
+            background-size: cover; /* Deckt den gesamten Bereich ab */
+            background-repeat: no-repeat; /* Kein Wiederholen */
+            border-radius: 15px;
+            font-size: 15px;
+            overflow: hidden;
+        }
+
+        .text {
+            flex-shrink: 1;
+        }
+
+        header {
+            position: fixed; /* Fixiert den Header oben */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgba(4, 4, 30, 100);
+            font-size: 25px;
+            z-index: 100;
+        }
+        .correct {
+            background-color: #c8e6c9; /* Grün */
+            border: 2px solid #4caf50;
+        }
+
+        .wrong {
+            background-color: #ffcdd2; /* Rot */
+            border: 2px solid #f44336;
+        }
+
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".picture img").forEach(img => {
+            img.addEventListener("click", function () {
+                let url = this.getAttribute("data-link");
+                if (url) {
+                    window.location.href = url; // Seite wechseln
+                }
+            });
+        });
+    });
+    function openSidebar() {
+        document.getElementById('navbar').classList.add('show');
+        document.getElementById('overlay').style.display = 'block';
+    }
+    function closeSidebar() {
+        document.getElementById('navbar').classList.remove('show');
+        document.getElementById('overlay').style.display = 'none';
+    }
+
+    const questions = [
+        {
+            question: "Wie sieht ein Judenhut aus?",
+            answers: [
+                { text: "Er ist rund.", correct: false },
+                { text: "Er ist spitz.", correct: true },
+                { text: "Er ist quadratisch.", correct: false },
+            ]
+        },
+        {
+            question: "Was hat den Judenhut von 1451 bis 1780 abgelöst?",
+            answers: [
+                { text: "Der gelbe Stein", correct: false },
+                { text: "Der gelbe Stern", correct: false },
+                { text: "Der gelbe Ring", correct: true },
+            ]
+        },
+        {
+            question: "Warum wurden Juden Geldverleiher?",
+            answers: [
+                { text: "Weil sie geldgierig sind.", correct: false },
+                { text: "Weil Juden nicht wollten, dass Christen diesen Beruf ausführen.", correct: false },
+                { text: "Weil Christen aufgrund ihres Glaubenssatzes diesen Beruf nicht ausführen konnten.", correct: true },
+            ]
+        },
+        {
+            question: "Inwiefern ist die Judensau antisemitsch?",
+            answers: [
+                { text: "Juden werden als Schweinebelästiger dargestellt.", correct: true },
+                { text: "Juden werden als Schweine dargestellt, welches für sie <<unreine Tiere>> sind.", correct: false },
+                { text: "Juden werden als Freunde von Schweinen dargestellt.", correct: false },
+            ]
+        },
+        {
+            question: "Was für ein antisemitisches Merkmal ist in diesem Bild erkennbar?",
+            image: "gefangnahme_christi.jpeg",
+            answers: [
+                { text: "Ein Judenhut", correct: true },
+                { text: "Eine Judensau", correct: false },
+                { text: "Geldgierige Juden", correct: false },
+            ]
+        },
+
+        {
+            question: "Was ist an dieser Abbildung antisemitisch?",
+            image: "bart.jpg",
+            answers: [
+                { text: "Die Nase der Frau", correct: false },
+                { text: "Das Nase des Mannes", correct: true },
+                { text: "Die Ohren des Mannes", correct: false },
+            ]
+        },
+        {
+            question: "Wer ist die Frau, die mit dem Schwert durchbohrt wird?",
+            image: "synagoga.png",
+            answers: [
+                { text: "Efa", correct: false },
+                { text: "Ecclesia", correct: false },
+                { text: "Synagoga", correct: true },
+                { text: "Maria", correct: false },
+            ]
+        },
+        {
+            question: "Wer steht für das Christentum?",
+            answers: [
+                { text: "Ecclesia", correct: true },
+                { text: "Synagoga", correct: false },
+            ]
+        }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function showQuestion() {
+        const q = questions[currentQuestion];
+        document.getElementById("question").textContent = q.question;
+
+        // Bild zeigen, wenn vorhanden
+        const img = document.getElementById("question-image");
+        if (q.image) {
+            img.src = q.image;
+            img.style.display = "block";
+        } else {
+            img.style.display = "none";
+        }
+
+        const answerList = document.getElementById("answers");
+        answerList.innerHTML = "";
+        document.getElementById("feedback").textContent = "";
+        document.getElementById("next-btn").style.display = "none";
+
+        q.answers.forEach(answer => {
+            const li = document.createElement("li");
+            li.textContent = answer.text;
+            li.onclick = () => selectAnswer(li, answer.correct);
+            answerList.appendChild(li);
+        });
+    }
+
+    function selectAnswer(element, isCorrect) {
+        const feedback = document.getElementById("feedback");
+        const answers = document.querySelectorAll("#answers li");
+
+        // Verhindert mehrfaches Klicken
+        if ([...answers].some(a => a.classList.contains("disabled"))) return;
+
+        answers.forEach(a => {
+            a.classList.add("disabled");
+
+            // Färbe die richtige Antwort grün
+            const isRight = questions[currentQuestion].answers.find(ans => ans.text === a.textContent)?.correct;
+            if (isRight) {
+                a.classList.add("correct");
+            }
+        });
+
+        // Markiere falsch gewählte Antwort rot
+        if (!isCorrect) {
+            element.classList.add("wrong");
+            feedback.textContent = "❌ Falsch!";
+            feedback.style.color = "red";
+        } else {
+            score++;
+            feedback.textContent = "✅ Richtig!";
+            feedback.style.color = "green";
+        }
+
+        document.getElementById("next-btn").style.display = "inline-block";
+    }
+
+
+    function nextQuestion() {
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+            showQuestion();
+        } else {
+            showResult();
+        }
+    }
+
+    function showResult() {
+        document.getElementById("question").style.display = "none";
+        document.getElementById("answers").style.display = "none";
+        document.getElementById("next-btn").style.display = "none";
+        document.getElementById("feedback").style.display = "none";
+
+        document.getElementById("result").textContent =
+            `Du hast ${score} von ${questions.length} Fragen richtig beantwortet.`;
+
+        document.getElementById("question-image").style.display = "none";
+
+    }
+
+    showQuestion();
+
+
+</script>
+</html>

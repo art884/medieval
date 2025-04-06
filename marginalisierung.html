@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt von Arthur (10c)</title>
+</head>
+<body class="quicksand">
+    <header class="header">
+        <button id="open-sidebar-button" onclick="openSidebar()">☰</button>
+        Von Arthur Tidemann (10c)
+        <nav id="navbar">
+            <ul>
+                <li>
+                    <button id="close-sidebar-button" onclick="closeSidebar()">✖</button>
+                </li>
+                <li><h1 class="center-flex">Über die Website</h1></li>
+                <li class="home-li"><a href="index.html">🏠Home</a></li>
+                <li><a href="about.html">👤About</a></li>
+                <li><a href="quiz.html">🤔Quiz</a></li>
+                <li><h1 class="center-flex">Antisemitische Merkmale</h1></li>
+                <li><a href="judenhut.html">🔺Judenhut</a></li>
+                <li><a href="rouelle.html">🟡Gelber Ring</a></li>
+                <li><a href="marginalisierung.html">👃Marginalisierung</a></li>
+                <li><a href="materielle_bereicherung.html">💰Materielle Bereicherung</a></li>
+                <li><a href="judensau.html">🐷Judensau</a></li>
+                <li><a href="synagoga.html">⚖️Synagoga und Ecclesia</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div onclick="closeSidebar()"></div>
+        <p class="center-flex">
+            <h1 class="container text"><b>Körperliche Marginalisierung der Juden</h1>
+        </p>
+    </main>
+    <main>
+        <p class="center-flex">
+            <h2>Kennzeichen</h2>
+        </p>
+        <p class="center-flex">
+            In der Kunst des Mittelalters gab es neben gegenständlichen Kennzeichen auch körperliche Kennzeichen an Juden, die sie als Juden hervorheben sollten.
+        </p>
+    </main>
+    <main>
+        <p class="center-flex">
+            <h2>Körperliche Kennzeichen können Folgende sein:</h2>
+        </p>
+        <li>Hakennase</li>
+        <li>Eine Vielzahl verzerrter, tierähnlicher Nasen</li>
+        <li>Warzen</li>
+        <li>Große Augenbrauen</li>
+        <li>Eine debil oder auch groteske Mimik</li>
+        <li>Finstere bzw. grimmige Gesichtsausdrücke</li>
+        <li>Schielende oder anstarrende Augen</li>
+        <li>Dunkler Spitzbart</li><br />
+        <br />
+        <picture class="bilderrahmen center-flex">
+            <img src="https://www.gnm.de/fileadmin/_processed_/9/8/csm_GNM-Blog-Kemptener-Schlaeger-min_41b6709898.jpg" title="Kalvarienberg der Familie Grimmel aus Kempten, um 1460/70, Leihgabe der Bayerischen Staatsgemäldesammlungen, Wittelsbacher Ausgleichsfonds"
+        </picture>
+        <div class="small">
+            Auf dieser Abbildung eines Teils des Kunstwerkes "Kalvarienberg der Familie Grimmel aus Kempten", um 1460/70, lassen sich die o.g. Kennzeichen wiedererkennen.
+        </div>
+    </main>
+    <main>
+        <p class="center-flex">
+            <h2>Warum wurden Juden so dargestellt?</h2>
+        </p>
+        <p class="center-flex">
+            Im Mittelalter waren die Juden die Feinde der Christen. Vorwürfe, wie der Mord Jesu, oder Tatsachen, wie der Erfolg der Juden im Geld
+            verleihen, unterstützten die negative Sicht der Christen auf Juden und im Christentum entwickelten sich einige Vorurteile gegenüuber
+            Juden, die sie als hässlich und abstoßend darstellen sollen. Genau dieses Ziel, die Juden als hässlich und abstoßend zu betrachten,
+            verfolgen die Kunstwerke, die Juden mit den o.g. Kennzeichen darstellen. Somit hebten sich auch Christen in solchen Abbildungen von den
+            Juden ab.
+        </p>
+        <picture class="bilderrahmen-small">
+            <a href="judensau.html"><img src="https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F20eabab6-86d5-11e9-abe3-2791ad0a81dd.jpg?crop=5399%2C3037%2C0%2C281&resize=1180" title="Judensau" /></a>
+        </picture>
+        <p class="small">
+            Die <a class="white" href="judensau.html">Judensau</a> (auch ein Merkmal, welches ein abstoßendes Bild auf Juden richten sollte)
+        </p>
+    </main>
+    <footer>
+    </footer>
+</body>
+<style>
+    @font-face {
+        font-family: 'font';
+        src: url('https://fonts.google.com/share?selection.family=Lexend:wght@100..900') format('woff2'), url('path/to/MeineSchriftart.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @media(max-width: 520px) {
+        body {
+            margin: 0;
+            padding: 15;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center; /* Fixiert die Ausrichtung oben */
+            font-family: 'font';
+            color: white;
+            font-size: 5px;
+            margin: 10px;
+            height: auto;
+            flex-direction: column;
+            padding-top: 110px; /* Gibt Platz für den Header */
+            background-image: url("https://cdn.pixabay.com/photo/2023/03/12/11/39/antiquity-7846558_1280.jpg"); /* Pfad zum Bild */
+            background-color: rgba(0,0,0,45);
+            background-size: cover; /* Deckt den gesamten Bereich ab */
+            background-repeat: no-repeat; /* Kein Wiederholen */
+            background-position: center top; /* Oben zentriert */
+            background-attachment: fixed;
+            min-height: 100vh; /* Falls der Body leer ist */
+        }
+
+        main {
+            font-size: 3px;
+            flex: 1;
+            margin: 40px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            /* Glassmorphism-Stil */
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: white;
+        }
+
+        .image-text-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .image {
+            width: 45%; /* Passt die Bildgröße an */
+            max-width: 100%;
+            height: auto;
+        }
+
+        .text {
+            width: 50%; /* Passt die Textbreite an */
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: justify; /* Text ausrichten */
+        }
+
+
+        .white {
+            color: white;
+        }
+
+            .white:hover {
+                color: dodgerblue;
+                transform: scale(1.05);
+            }
+
+        h1 {
+            display: block;
+            font-size: 4px;
+        }
+
+        h2 {
+            background: linear-gradient(to left, orangered, yellow);
+            background-clip: text;
+            filter: brightness(1.3);
+            color: transparent;
+        }
+
+        .bilderrahmen {
+            width: 100%;
+            padding: 10px;
+            border: 5px solid #333; /* Rahmen */
+            border-radius: 10px; /* Abgerundete Ecken */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center; /* Bild mittig im Rahmen */
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .bilderrahmen img {
+                width: 100%; /* Passt sich der Rahmenbreite an (also 60% der Originalgröße) */
+                height: auto;
+                border-radius: 8px;
+            }
+
+            /* Interaktion */
+            .bilderrahmen:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+                cursor: pointer;
+            }
+
+        .bilderrahmen-small {
+            width: 30%;
+            padding: 10px;
+            border: 5px solid #333; /* Rahmen */
+            border-radius: 10px; /* Abgerundete Ecken */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center; /* Bild mittig im Rahmen */
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .bilderrahmen-small img {
+                width: 100%; /* Passt sich der Rahmenbreite an (also 60% der Originalgröße) */
+                height: auto;
+                border-radius: 8px;
+            }
+
+            /* Interaktion */
+            .bilderrahmen-small:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+                cursor: pointer;
+            }
+
+
+
+
+        .quicksand {
+            font-family: "Quicksand", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .small {
+            font-size: 6px;
+        }
+
+        .margin-right {
+            margin-right: auto;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund */
+            z-index: 9; /* Muss unter der Sidebar liegen */
+            display: none; /* Standardmäßig unsichtbar */
+        }
+
+        /* Zeige das Overlay, wenn die Sidebar offen ist */
+        nav.show + #overlay {
+            display: block;
+        }
+
+
+        #open-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            width: min(15em, 100%);
+            background-color: rgba(4, 4, 30, 100);
+            transition: right 0.3s ease-in-out;
+            z-index: 200;
+        }
+
+            nav.show {
+                right: 0;
+                background-color: rgba(20, 20, 55, 100);
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            nav li {
+                padding: 15px;
+            }
+
+            nav a {
+                display: flex;
+                padding: 5px;
+                border-radius: 15px;
+                text-decoration: none;
+                color: rgba(150, 150, 255, 100);
+            }
+
+                nav a:hover {
+                    color: white;
+                    background-color: rgba(150, 150, 255, 100);
+                }
+
+        #close-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+
+        .center-flex {
+            display: block;
+            text-align: center;
+        }
+
+        .picture img {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+            .picture img:hover {
+                filter: brightness(2);
+            }
+
+        .container {
+            display: block;
+            width: auto;
+            text-align: center;
+            padding: 15px;
+            margin: 10px;
+            height: auto;
+            background-image: url("https://www.gnm.de/fileadmin/_processed_/3/9/csm_GNM-Blog-Antisemitismus-Titel_9cd18e76eb.jpg"); /* Pfad zum Bild */
+            background-size: cover; /* Deckt den gesamten Bereich ab */
+            background-repeat: no-repeat; /* Kein Wiederholen */
+            border-radius: 15px;
+            font-size: 15px;
+            overflow: hidden;
+        }
+
+        .text {
+            flex-shrink: 1;
+        }
+
+        open-sidebar-button {
+            display: none;
+            background: none;
+            border: none;
+            padding: 1em;
+            margin-left: auto;
+            cursor: pointer;
+        }
+
+        close-sidebar-button {
+            display: none;
+            background: none;
+            border: none;
+            padding: 1em;
+            cursor: pointer;
+        }
+
+        header {
+            position: fixed; /* Fixiert den Header oben */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgba(4, 4, 30, 100);
+            font-size: 8px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            z-index: 100;
+        }
+    }
+
+    @media(max-width: 770px) {
+        body {
+            margin: 0;
+            padding: 10;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center; /* Fixiert die Ausrichtung oben */
+            font-family: 'font';
+            color: white;
+            font-size: 8px;
+            margin: 10px;
+            height: auto;
+            flex-direction: column;
+            padding-top: 110px; /* Gibt Platz für den Header */
+            background-image: url("https://cdn.pixabay.com/photo/2023/03/12/11/39/antiquity-7846558_1280.jpg"); /* Pfad zum Bild */
+            backgrond-color: rgba(0,0,0,45);
+            background-size: cover; /* Deckt den gesamten Bereich ab */
+            background-repeat: no-repeat; /* Kein Wiederholen */
+            background-position: center top; /* Oben zentriert */
+            background-attachment: fixed;
+            min-height: 100vh; /* Falls der Body leer ist */
+        }
+
+        .image-text-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .image {
+            width: 45%; /* Passt die Bildgröße an */
+            max-width: 100%;
+            height: auto;
+        }
+
+        .text {
+            width: 50%; /* Passt die Textbreite an */
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: justify; /* Text ausrichten */
+        }
+
+
+        main {
+            font-size: 10px;
+            flex: 1;
+            margin: 40px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            /* Glassmorphism-Stil */
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: white;
+        }
+
+        .bilderrahmen {
+            width: 60%; /* Nur noch 60% der ursprünglichen Breite */
+            padding: 10px;
+            border: 5px solid #333; /* Rahmen */
+            border-radius: 10px; /* Abgerundete Ecken */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center; /* Bild mittig im Rahmen */
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .bilderrahmen img {
+                width: 100%; /* Passt sich der Rahmenbreite an (also 60% der Originalgröße) */
+                height: auto;
+                border-radius: 8px;
+            }
+
+            /* Interaktion */
+            .bilderrahmen:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+                cursor: pointer;
+            }
+
+        .bilderrahmen-small {
+            width: 30%;
+            padding: 10px;
+            border: 5px solid #333; /* Rahmen */
+            border-radius: 10px; /* Abgerundete Ecken */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center; /* Bild mittig im Rahmen */
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bilderrahmen-small img {
+            width: 100%; /* Passt sich der Rahmenbreite an (also 60% der Originalgröße) */
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Interaktion */
+        .bilderrahmen-small:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+        }
+
+
+        .white {
+            color: white;
+        }
+
+            .white:hover {
+                color: dodgerblue;
+                transform: scale(1.05);
+            }
+
+
+        h1 {
+            font-size: 10px;
+        }
+
+        h2 {
+            background: linear-gradient(to left, orangered, yellow);
+            filter: brightness(1.3);
+            background-clip: text;
+            color: transparent;
+        }
+
+
+        .quicksand {
+            font-family: "Quicksand", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .small {
+            font-size: 7px;
+        }
+
+        .margin-right {
+            margin-right: auto;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund */
+            z-index: 9; /* Muss unter der Sidebar liegen */
+            display: none; /* Standardmäßig unsichtbar */
+        }
+
+        /* Zeige das Overlay, wenn die Sidebar offen ist */
+        nav.show + #overlay {
+            display: block;
+        }
+
+        #open-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            width: min(15em, 100%);
+            background-color: rgba(4, 4, 30, 100);
+            transition: right 0.3s ease-in-out;
+            z-index: 200;
+        }
+
+            nav.show {
+                right: 0;
+                background-color: rgba(20, 20, 55, 100);
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            nav li {
+                padding: 15px;
+            }
+
+            nav a {
+                display: flex;
+                padding: 5px;
+                border-radius: 15px;
+                text-decoration: none;
+                color: rgba(150, 150, 255, 100);
+            }
+
+                nav a:hover {
+                    color: white;
+                    background-color: rgba(150, 150, 255, 100);
+                }
+
+        #close-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+
+
+        .center-flex {
+            display: block;
+            text-align: center;
+        }
+
+        .picture img {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+            .picture img:hover {
+                filter: brightness(2);
+            }
+
+        .container {
+            display: block;
+            width: auto;
+            text-align: center;
+            padding: 30px;
+            margin: 10px;
+            height: auto;
+            background-image: url("https://www.gnm.de/fileadmin/_processed_/3/9/csm_GNM-Blog-Antisemitismus-Titel_9cd18e76eb.jpg"); /* Pfad zum Bild */
+            background-size: cover; /* Deckt den gesamten Bereich ab */
+            background-repeat: no-repeat; /* Kein Wiederholen */
+            border-radius: 15px;
+            font-size: 15px;
+            overflow: hidden;
+        }
+
+        .text {
+            flex-shrink: 1;
+        }
+
+        header {
+            position: fixed; /* Fixiert den Header oben */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgba(4, 4, 30, 100);
+            font-size: 15px;
+            display: flex;
+            z-index: 100;
+        }
+    }
+
+    @media(min-width: 771px) {
+        body {
+            margin: 0;
+            padding: 10;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center; /* Fixiert die Ausrichtung oben */
+            font-family: 'font';
+            color: white;
+            font-size: 20px;
+            margin: 10px;
+            height: auto;
+            flex-direction: column;
+            padding-top: 110px; /* Gibt Platz für den Header */
+            background-image: url("https://cdn.pixabay.com/photo/2023/03/12/11/39/antiquity-7846558_1280.jpg"); /* Pfad zum Bild */
+            background-color: rgba(0,0,0,45);
+            background-size: cover; /* Deckt den gesamten Bereich ab */
+            background-repeat: no-repeat; /* Kein Wiederholen */
+            background-position: center top; /* Oben zentriert */
+            background-attachment: fixed;
+            min-height: 100vh; /* Falls der Body leer ist */
+        }
+
+        .image-text-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .image {
+            width: 45%; /* Passt die Bildgröße an */
+            max-width: 100%;
+            height: auto;
+        }
+
+        .text {
+            width: 50%; /* Passt die Textbreite an */
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: justify; /* Text ausrichten */
+        }
+
+
+        main {
+            flex: 1;
+            font-size: 15px;
+            margin: 80px;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            /* Glassmorphism-Stil */
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: white;
+        }
+
+        .white {
+            color: white;
+        }
+
+            .white:hover {
+                color: dodgerblue;
+                transform: scale(1.05);
+            }
+
+        .bilderrahmen {
+            width: 60%; /* Nur noch 60% der ursprünglichen Breite */
+            padding: 10px;
+            border: 5px solid #333; /* Rahmen */
+            border-radius: 10px; /* Abgerundete Ecken */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center; /* Bild mittig im Rahmen */
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .bilderrahmen img {
+                width: 100%; /* Passt sich der Rahmenbreite an (also 60% der Originalgröße) */
+                height: auto;
+                border-radius: 8px;
+            }
+
+            /* Interaktion */
+            .bilderrahmen:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+                cursor: pointer;
+            }
+
+        .bilderrahmen-small {
+            width: 30%;
+            padding: 10px;
+            border: 5px solid #333; /* Rahmen */
+            border-radius: 10px; /* Abgerundete Ecken */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center; /* Bild mittig im Rahmen */
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .bilderrahmen-small img {
+                width: 100%; /* Passt sich der Rahmenbreite an (also 60% der Originalgröße) */
+                height: auto;
+                border-radius: 8px;
+            }
+
+            /* Interaktion */
+            .bilderrahmen-small:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+                cursor: pointer;
+            }
+
+        h1{
+            font-size: 15px;
+        }
+
+
+        h2 {
+            background: linear-gradient(to left, orangered, yellow);
+            filter: brightness(1.3);
+            background-clip: text;
+            color: transparent;
+        }
+
+
+        .quicksand {
+            font-family: "Quicksand", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .small {
+            font-size: 10px;
+        }
+
+        .margin-right {
+            margin-right: auto;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund */
+            z-index: 9; /* Muss unter der Sidebar liegen */
+            display: none; /* Standardmäßig unsichtbar */
+        }
+
+        /* Zeige das Overlay, wenn die Sidebar offen ist */
+        nav.show + #overlay {
+            display: block;
+        }
+
+        #open-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            width: min(15em, 100%);
+            background-color: rgba(4, 4, 30, 100);
+            transition: right 0.3s ease-in-out;
+            z-index: 200;
+        }
+
+            nav.show {
+                right: 0;
+                background-color: rgba(20, 20, 55, 100);
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            nav li {
+                padding: 5px;
+            }
+
+            nav a {
+                font-size: 10px;
+                display: flex;
+                padding: 5px;
+                border-radius: 15px;
+                text-decoration: none;
+                color: rgba(150, 150, 255, 100);
+            }
+
+                nav a:hover {
+                    color: white;
+                    background-color: rgba(150, 150, 255, 100);
+                }
+
+        #close-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+
+        .center-flex {
+            display: block;
+            text-align: center;
+        }
+
+        .picture img {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+            .picture img:hover {
+                filter: brightness(1.5);
+            }
+
+        .container {
+            display: block;
+            width: auto;
+            text-align: center;
+            padding: 50px;
+            margin: 10px;
+            height: auto;
+            background-image: url("https://www.gnm.de/fileadmin/_processed_/3/9/csm_GNM-Blog-Antisemitismus-Titel_9cd18e76eb.jpg"); /* Pfad zum Bild */
+            background-size: cover; /* Deckt den gesamten Bereich ab */
+            background-repeat: no-repeat; /* Kein Wiederholen */
+            border-radius: 15px;
+            font-size: 15px;
+            overflow: hidden;
+        }
+
+        .text {
+            flex-shrink: 1;
+        }
+
+        header {
+            position: fixed; /* Fixiert den Header oben */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgba(4, 4, 30, 100);
+            font-size: 25px;
+            z-index: 100;
+        }
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".picture img").forEach(img => {
+            img.addEventListener("click", function () {
+                let url = this.getAttribute("data-link");
+                if (url) {
+                    window.location.href = url; // Seite wechseln
+                }
+            });
+        });
+    });
+    function openSidebar() {
+        document.getElementById('navbar').classList.add('show');
+        document.getElementById('overlay').style.display = 'block';
+    }
+    function closeSidebar() {
+        document.getElementById('navbar').classList.remove('show');
+        document.getElementById('overlay').style.display = 'none';
+    }
+</script>
+</html>
